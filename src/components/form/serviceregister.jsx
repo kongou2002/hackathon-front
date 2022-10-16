@@ -96,7 +96,7 @@ function Serviceregister(props) {
                     type="submit"
                     variant='contained'
                 >
-                    Submit
+                    Đăng ký
                 </Button>
             </Box>
 

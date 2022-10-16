@@ -6,6 +6,7 @@ import v2 from '../shared/PRO-MECH/v2.png'
 import v3 from '../shared/PRO-MECH/v3.png'
 import v4 from '../shared/PRO-MECH/v4.png'
 import v5 from '../shared/PRO-MECH/v5.png'
+import v6 from '../shared/PRO-MECH/v6.png'
 import Serviceregister from '../components/form/serviceregister'
 const data = [
     { img: v1, label: 'Vệ sinh máy tính', paragraph: '​Với chi phí cực kỳ hạt dẻ cùng nhiều lựa chọn đi kèm về keo' },
@@ -14,7 +15,8 @@ const data = [
 ]
 const data2 = [
     { img: v4, label: '​Sửa lỗi phần mềm', paragraph: 'Hỗ trợ khách hàng 24/24 với những vấn đề gặp phải với phần mềm đang sử dụng Picture Sửa lỗi phần cứng' },
-    { img: v5, label: 'Sửa lỗi phần cứng', paragraph: 'Sửa lỗi phần cứng' }
+    { img: v5, label: 'Sửa lỗi phần cứng', paragraph: 'Sửa lỗi phần cứng' },
+    { img: v6, label: 'Tư vấn các lỗi khác', paragraph: 'Ngoài những lỗi trên, Pro-Mech sẽ giúp khách hàng xác định những lỗi mà chủ nhân máy tính không xác định được' }
 ]
 function Service() {
     return (
@@ -33,7 +35,7 @@ function Service() {
                 <Box sx={{ borderBottom: '1px solid black', mb: '5rem' }}>
                     <Stack flexDirection={'row'}>
                         {data.map((p) => (
-                            <Stack flexDirection={'column'} alignItems={'center'} >
+                            <Stack flexDirection={'column'} alignItems={'center'} width={'50%'} mb={5}>
                                 <img src={p.img} alt='' width={'56px'} />
                                 <h3 style={{ margin: 1, padding: 1 }} >{p.label}</h3>
                                 <p style={{ margin: 1, padding: 1 }}>{p.paragraph}</p>

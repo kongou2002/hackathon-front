@@ -52,10 +52,10 @@ function Home() {
                 <img src={promech} alt='' style={{ width: '110%', marginBottom: '5rem' }} />
             </Stack>
             <Stack>
-                <Typography variant='h4' textAlign={'left'}>
+                <Typography variant='h4' textAlign={'left'} mb={'2rem'}>
                     Pro-Mech cung cấp những dịch vụ thiết yếu cho máy tính của bạn
                 </Typography>
-                <img src={promech1} alt='' style={{ width: 'auto', }} />
+                <img src={promech1} alt='' style={{ width: 'auto', marginBottom:'2rem' }} />
             </Stack>
             <Stack display={'flex'} flexDirection={'row'}>
                 <Box>
@@ -66,7 +66,7 @@ function Home() {
                 <Box ml={20} sx={{ width: '50%' }}>
                     {data.map((a) => (
                         <Stack sx={{ borderBottom: '2px solid black', textAlign: 'left' }}>
-                            <Stack sx={{ alignItems: 'center' }} direction="row">
+                            <Stack sx={{ alignItems: 'center' }} direction="row" marginTop={'1rem'}>
                                 <img src={a.img} alt='' style={{ width: '56px', height: '56px' }} />
                                 <h3 style={{ marginLeft: '1rem' }}>{a.label}</h3>
                             </Stack>
