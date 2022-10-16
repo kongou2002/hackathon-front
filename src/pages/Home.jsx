@@ -78,7 +78,7 @@ function Home() {
 
             </Stack>
             <Button variant='contained' sx={{ bgcolor: '#C5CBCF', mt: 5 }}>
-                Đăng kí sử dụng dịch vụ
+                <Link to={'/service'} style={{ color: 'white' }} >Đăng kí sử dụng dịch vụ</Link>
             </Button>
         </Container>
     )
