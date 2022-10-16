@@ -80,6 +80,9 @@ function Home() {
             <Button variant='contained' sx={{ bgcolor: '#C5CBCF', mt: 5 }}>
                 <Link to={'/service'} style={{ color: 'white' }} >Đăng kí sử dụng dịch vụ</Link>
             </Button>
+            <Button variant='contained' sx={{ bgcolor: '#C5CBCF', mt: 5 ,ml: 4}} href='https://m.me/108563548703292'>
+                Liên hệ với chúng tôi
+            </Button>
         </Container>
     )
 }

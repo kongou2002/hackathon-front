@@ -5,7 +5,7 @@ import React from 'react'
 function index() {
   return (
     <Stack sx={{ borderTop: '1px solid black', borderBottom: '1px solid black', fontSize: '1rem', mt: '3rem' }}>
-      <Stack flexDirection={'row'} sx={{ mt: 4, mb: 4 }}>
+      <Stack flexDirection={'row'} sx={{ m:4}}>
         <Box sx={{ width: '30%', textAlign: 'left', }}>
           <Typography variant='body1'>
             FPT University, D1 Street, Saigon Hi-tech Park, Long Thanh My Ward, ​Thu Duc City, Ho Chi Minh City.
