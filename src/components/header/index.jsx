@@ -13,7 +13,7 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../shared/PRO-MECH/logo.png';
 
-const pages = [{ label: 'Trang chủ', path: '/' }, { label: 'Dịch vụ', path: '/service' }, { label: 'Về PRO-Mech', path: '/about' }, { label: 'Thanh Toán', path: 'payment' }];
+const pages = [{ label: 'Trang chủ', path: '/' }, { label: 'Dịch vụ', path: '/service' }, { label: 'Về PRO-Mech', path: '/about' }, ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
