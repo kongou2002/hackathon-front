@@ -1,11 +1,12 @@
-import { Skeleton, Typography } from '@mui/material';
+import { Button, Skeleton, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 function Dashboard() {
     const [data, setData] = useState()
     const [loading, setLoading] = useState('false')
+    const [id, setID] = useState()
     useEffect(() => {
         setLoading('true')
         axios.get('https://pro-mech.azurewebsites.net/Ticket/ALL')
@@ -18,19 +19,35 @@ function Dashboard() {
             .catch(err => {
                 // Handle Error Here
                 console.error(err);
+
             });
     }, [])
+
+    const handleClick = (event) => {
+        setID(event.target.value)
+        try {
+            axios.delete(`https://pro-mech.azurewebsites.net/Ticket/ConfirmTicket/${id}`, {
+            })
+                .then(res => {
+                    console.log(res)
+                    alert('đã xác nhận hoàn thành')
+                })
+        } catch (err) {
+            console.log(err)
+        }
+    }
     return (
         <Stack  >
             {loading ? (
                 <Skeleton variant="circular" width={40} height={40} />
             ) : (<Stack flexDirection={'row'} flexWrap={'wrap'} alignItems={'center'}>
                 {data?.map((value) => (
-                    <Stack key={value?.index} sx={{ border: '1px solid black', textAlign:'left',width:'30%', height:'100%' }} m={2} flexWrap={'nowrap'}>
+                    <Stack key={value?.index} sx={{ border: '1px solid black', textAlign: 'left', width: '30%', height: '100%' }} m={2} flexWrap={'nowrap'}>
                         <Typography variant='p'> Họ và tên: {value?.name} </Typography>
                         <Typography variant='p'> Miêu tả: {value?.description} </Typography>
                         <Typography variant='p'> Password máy: {value?.password} </Typography>
                         <Typography variant='p' > Số điện thoại: {value?.phone} </Typography>
+                        <Button value={value?.ticketID} onClick={handleClick}>Done</Button>
                     </Stack>
                 ))}
             </Stack >)}
