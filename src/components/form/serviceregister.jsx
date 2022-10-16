@@ -6,6 +6,7 @@ const data = [
     'Chỉnh màu màn hình', 'Cài đặt phần mềm', 'Sửa lỗi phần mềm', 'Sửa lỗi phần cứng', 'Phủi bụi (80.000 VND)', 'Tra keo tản nhiệt (100.000 VND)', 'Tra keo tản nhiệt (300.000 VND)'
 ]
 function Serviceregister(props) {
+    const [combo, setCombo] = useState('')
     const [autocompleteValues, setAutocompleteValues] = useState([]);
     const [send, setSend] = useState({
         name: {},
@@ -19,8 +20,11 @@ function Serviceregister(props) {
     }
 
     const handleChange = (event) => {
+        setCombo(event.target.value)
         try {
+            setCombo = event.target.value
         } catch (err) {
+            console.log(err)
             const value = event.target.value;
             setSend({
                 ...send,
@@ -29,24 +33,30 @@ function Serviceregister(props) {
         }
 
     };
-    console.log(autocompleteValues)
+    console.log(send)
     const handlesubmit = (e) => {
-        e.preventDefault(e)
-        Axios.post("https://pro-mech.azurewebsites.net/Ticket/CreateTicket", {
-            name: send.name,
-            password: send.password,
-            phone: send.phone,
-            description: send.description,
-            service: autocompleteValues,
-        })
-            .then(res => {
-                console.log(res.data)
+        try {
+            Axios.post("https://pro-mech.azurewebsites.net/Ticket/CreateTicket", {
+                name: send.name,
+                password: send.password,
+                phone: send.phone,
+                description: send.description,
+                service: autocompleteValues,
             })
+                .then(res => {
+                    console.log(res)
+                    alert('Chúng tôi đã nhận được form của bạn')
+                })
+        } catch (err) {
+            console.log(err)
+        }
+        e.preventDefault(e)
+
     }
     console.log(send)
     console.log(JSON.stringify(autocompleteValues))
     return (
-        <Stack >
+        <Stack mt={5}>
             <Typography variant='h4'>
                 Đăng ký dịch vụ
             </Typography>
